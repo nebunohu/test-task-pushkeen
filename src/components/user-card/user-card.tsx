@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
+import { TUser } from '../../types';
 
-const UserCard: FC = () => (
+type TUserCardProps = {
+  user: TUser;
+}
+
+const UserCard: FC<TUserCardProps> = ({ user }) => (
   <div>
-    Hello
+    {`${user.name} ${user.username}`}
   </div>
 );
 
