@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 239px;
+  height: 143px;
+  border: 1px solid #000000;
+  background: #FFF;
+
+  padding: 17px;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+  text-transform: capitalize;
+
+  margin-bottom: 5px;
+
+  color: #000000;
+}
+
+.city {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+
+  margin-bottom: 35px;
+  
+  color: rgba(0, 0, 0, 0.41);
+}

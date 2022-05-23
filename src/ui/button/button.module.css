@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 148px;
+  height: 35px;
+
+  background: #101010;
+  border: 1px solid #0D1E4B;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+
+  text-transform: capitalize;
+
+  color: #FFFFFF;
+
+  cursor: pointer;
+}
