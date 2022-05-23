@@ -3,6 +3,11 @@
   src: url('./fonts/OpenSans-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  src: url('./fonts/AlegreyaSansSC-Regular.ttf');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

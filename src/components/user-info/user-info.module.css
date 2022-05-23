@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 108px;
+  margin: 0 0 30px;
+
+  border: 1px solid #000000;
+  text-align: left;
+}
+
+.userName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 40px;
+
+  border-bottom: 1px solid #000;
+
+  color: #000000;
+}
+
+.meta {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.metaSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  border-right: 1px solid #000;
+  padding: 0 18px; 
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+
+  color: #000;
+}

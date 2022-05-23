@@ -1,6 +1,5 @@
-import React, { FC, useEffect } from 'react';
-import { getUsersThunk } from '../../redux/actions/users-actions';
-import { useAppDispatch, useAppSelector } from '../../sevices/hooks';
+import React, { FC } from 'react';
+import { useAppSelector } from '../../sevices/hooks';
 import { TUser } from '../../types';
 import UserCard from '../user-card/user-card';
 
@@ -8,11 +7,7 @@ import UserCard from '../user-card/user-card';
 import styles from './users-list.module.css';
 
 const UsersList: FC = () => {
-  const dispatch = useAppDispatch();
   const { list } = useAppSelector((store) => store.users);
-  useEffect(() => {
-    if (!list.length) dispatch(getUsersThunk());
-  }, []);
 
   if (!list.length) {
     return (

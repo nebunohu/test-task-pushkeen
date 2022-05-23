@@ -1,0 +1,8 @@
+.app {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.contentWrapper {
+  width: 90vw;
+}

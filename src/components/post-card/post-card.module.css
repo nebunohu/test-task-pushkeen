@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 35px;
+
+  background: #FFF;
+  border: 1px solid #000000;
+
+  text-align: left;
+}
+
+.title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+  text-transform: capitalize;
+
+  color: #000000;
+}
+
+.body {
+  width: 100%;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+
+  color: rgba(0, 0, 0, 0.41);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link {
+  text-decoration: none;
+  /*width: 40%;*/
+  flex-grow: 1;
+}

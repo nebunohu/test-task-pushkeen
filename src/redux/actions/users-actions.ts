@@ -1,6 +1,11 @@
 import { API_BASE_URL } from '../../consts/index';
 import getRequest from '../../utils/getRequest';
-import { AppDispatch, TUser, TPost } from '../../types';
+import {
+  AppDispatch,
+  TUser,
+  TPost,
+  TComment,
+} from '../../types';
 
 export const GET_USERS_REQUEST: 'GET_USERS_REQUEST' = 'GET_USERS_REQUEST';
 export const GET_USERS_REQUEST_SUCCESS: 'GET_USERS_REQUEST_SUCCESS' = 'GET_USERS_REQUEST_SUCCESS';
@@ -8,6 +13,10 @@ export const GET_USERS_REQUEST_FAILED: 'GET_USERS_REQUEST_FAILED' = 'GET_USERS_R
 export const GET_POSTS_REQUEST: 'GET_POSTS_REQUEST' = 'GET_POSTS_REQUEST';
 export const GET_POSTS_REQUEST_SUCCESS: 'GET_POSTS_REQUEST_SUCCESS' = 'GET_POSTS_REQUEST_SUCCESS';
 export const GET_POSTS_REQUEST_FAILED: 'GET_POSTS_REQUEST_FAILED' = 'GET_POSTS_REQUEST_FAILED';
+export const GET_COMMENTS_REQUEST: 'GET_COMMENTS_REQUEST' = 'GET_COMMENTS_REQUEST';
+export const GET_COMMENTS_REQUEST_SUCCESS: 'GET_COMMENTS_REQUEST_SUCCESS' = 'GET_COMMENTS_REQUEST_SUCCESS';
+export const GET_COMMENTS_REQUEST_FAILED: 'GET_COMMENTS_REQUEST_FAILED' = 'GET_COMMENTS_REQUEST_FAILED';
+export const CLEAR_COMMENTS: 'CLEAR_COMMENTS' = 'CLEAR_COMMENTS';
 
 export type TGetUsersRequest = {
   type: typeof GET_USERS_REQUEST;
@@ -35,12 +44,33 @@ export type TGetPostsRequestFailed = {
   type: typeof GET_POSTS_REQUEST_FAILED;
 };
 
+export type TGetCommentsRequest = {
+  type: typeof GET_COMMENTS_REQUEST;
+};
+
+export type TGetCommentsRequestSuccess = {
+  type: typeof GET_COMMENTS_REQUEST_SUCCESS;
+  comments: Array<TComment>
+};
+
+export type TGetCommentsRequestFailed = {
+  type: typeof GET_COMMENTS_REQUEST_FAILED;
+};
+
+export type TClearComments = {
+  type: typeof CLEAR_COMMENTS;
+};
+
 export type TUsersActions = TGetUsersRequest |
 TGetUsersRequestSuccess |
 TGetUsersRequestFailed |
 TGetPostsRequest |
 TGetPostsRequestSuccess |
-TGetPostsRequestFailed;
+TGetPostsRequestFailed |
+TGetCommentsRequest |
+TGetCommentsRequestSuccess |
+TGetCommentsRequestFailed |
+TClearComments;
 
 export const getUsersRequest = (): TGetUsersRequest => {
   return {
@@ -80,6 +110,33 @@ export const getPostsRequestFailed = (): TGetPostsRequestFailed => {
   };
 };
 
+export const getCommentsRequest = (): TGetCommentsRequest => {
+  return {
+    type: GET_COMMENTS_REQUEST,
+  };
+};
+
+export const getCommentsRequestSuccess = (
+  comments: Array<TComment>,
+): TGetCommentsRequestSuccess => {
+  return {
+    type: GET_COMMENTS_REQUEST_SUCCESS,
+    comments,
+  };
+};
+
+export const getCommentsRequestFailed = (): TGetCommentsRequestFailed => {
+  return {
+    type: GET_COMMENTS_REQUEST_FAILED,
+  };
+};
+
+export const clearComments = (): TClearComments => {
+  return {
+    type: CLEAR_COMMENTS,
+  };
+};
+
 export const getUsersThunk = () => async (dispatch: AppDispatch) => {
   dispatch(getUsersRequest());
   try {
@@ -95,9 +152,19 @@ export const getUsersThunk = () => async (dispatch: AppDispatch) => {
 export const getPostsThunk = () => async (dispatch: AppDispatch) => {
   dispatch(getPostsRequest());
   try {
-    const users = await getRequest(`${API_BASE_URL}/posts`);
-    dispatch(getPostsRequestSuccess(users));
+    const posts = await getRequest(`${API_BASE_URL}/posts`);
+    dispatch(getPostsRequestSuccess(posts));
   } catch (e) {
     dispatch(getPostsRequestFailed());
+  }
+};
+
+export const getCommentsThunk = (post: string) => async (dispatch: AppDispatch) => {
+  dispatch(getCommentsRequest());
+  try {
+    const comments = await getRequest(`${API_BASE_URL}/posts/${post}/comments`);
+    dispatch(getCommentsRequestSuccess(comments));
+  } catch (e) {
+    dispatch(getCommentsRequestFailed());
   }
 };

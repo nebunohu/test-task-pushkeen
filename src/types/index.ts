@@ -43,3 +43,11 @@ export type TPost = {
   'title': string;
   'body': string;
 };
+
+export type TComment = {
+  postId: number;
+  id: number;
+  name: string;
+  body: string;
+  email: string;
+};
