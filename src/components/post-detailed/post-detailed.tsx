@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { clearComments, getCommentsThunk } from '../../redux/actions/users-actions';
 import { useAppDispatch, useAppSelector } from '../../sevices/hooks';
 import { TComment, TPost, TUser } from '../../types';
+import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import CommentCard from '../comment-card/comment-card';
 
 // Styles
@@ -29,6 +30,7 @@ const PostDedailed: FC = () => {
 
   return (
     <div className={`${styles.wrapper}`}>
+      <Breadcrumbs />
       <div className={`${styles.postBlockWrapper}`}>
         <div className={`${styles.name}`}>{currentUser.name}</div>
         <div className={`${styles.email}`}>{currentUser.email}</div>

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../sevices/hooks';
 import { TPost, TUser } from '../../types';
 import Button from '../../ui/button/button';
+import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import PostCard from '../post-card/post-card';
 import UserInfo from '../user-info/user-info';
 
@@ -21,6 +22,7 @@ const UserProfile: FC = () => {
 
   return (
     <div className={`${styles.wrapper}`}>
+      <Breadcrumbs />
       <UserInfo user={user} />
       <div className={`${styles.postsWrapper}`}>
         {usersPosts.map((el: TPost, index: number) => {
