@@ -7,9 +7,9 @@ import UserCard from '../user-card/user-card';
 import styles from './users-list.module.css';
 
 const UsersList: FC = () => {
-  const { list } = useAppSelector((store) => store.users);
+  const { users } = useAppSelector((store) => store.usersState);
 
-  if (!list.length) {
+  if (!users.length) {
     return (
       <div>
         Список пользователей пуст
@@ -18,7 +18,7 @@ const UsersList: FC = () => {
   }
   return (
     <div className={`${styles.wrapper}`}>
-      {list.map((el: TUser) => <UserCard key={Math.random()} user={el} />)}
+      {users.map((el: TUser) => <UserCard key={Math.random()} user={el} />)}
     </div>
   );
 };

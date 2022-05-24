@@ -11,9 +11,9 @@ import UserInfo from '../user-info/user-info';
 import styles from './user-profile.module.css';
 
 const UserProfile: FC = () => {
-  const { list, posts } = useAppSelector((store) => store.users);
+  const { users, posts } = useAppSelector((store) => store.usersState);
   const params = useParams();
-  const user = list.find((el: TUser) => el.id === parseInt(params.userId!, 10));
+  const user = users.find((el: TUser) => el.id === parseInt(params.userId!, 10));
   const usersPosts = posts.filter((el: TPost) => el.userId === parseInt(params.userId!, 10));
 
   if (!user) {

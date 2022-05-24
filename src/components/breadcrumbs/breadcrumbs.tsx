@@ -12,9 +12,9 @@ interface LooseObject {
 }
 
 const DynamicUserBreadcrumb: FC<BreadcrumbComponentProps> = ({ match }) => {
-  const { list } = useAppSelector((store) => store.users);
+  const { users } = useAppSelector((store) => store.usersState);
   const userNamesById: LooseObject = {};
-  list.forEach((el: TUser) => {
+  users.forEach((el: TUser) => {
     const key = el.id.toString();
     userNamesById[key] = el.name;
   });

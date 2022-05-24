@@ -1,8 +1,8 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 108px;
   margin: 0 0 30px;
+  box-sizing: border-box;
 
   border: 1px solid #000000;
   text-align: left;
@@ -19,6 +19,7 @@
   font-size: 35px;
   line-height: 40px;
 
+  padding: 18px;
   border-bottom: 1px solid #000;
 
   color: #000000;

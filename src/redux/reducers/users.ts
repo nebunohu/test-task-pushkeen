@@ -14,7 +14,7 @@ import {
 } from '../actions/users-actions';
 
 type TUsersState = {
-  list: Array<TUser>;
+  users: Array<TUser>;
   posts: Array<TPost>;
   comments: Array<TComment>;
 
@@ -32,7 +32,7 @@ type TUsersState = {
 };
 
 const initialState: TUsersState = {
-  list: [],
+  users: [],
   posts: [],
   comments: [],
 
@@ -64,7 +64,7 @@ const usersReducer = (state = initialState, action: TUsersActions) => {
         ...state,
         getUsersRequest: false,
         getUsersRequestSuccess: true,
-        list: action.users,
+        users: action.users,
       };
     }
     case GET_USERS_REQUEST_FAILED: {

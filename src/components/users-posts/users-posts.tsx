@@ -17,7 +17,7 @@ type TUserPostsProps = {
 
 const UsersPosts: FC<TUserPostsProps> = () => {
   const { userId } = useParams();
-  const { posts } = useAppSelector((store) => store.users);
+  const { posts } = useAppSelector((store) => store.usersState);
   const [usersPosts, setUsersPosts] = useState<Array<TPost>>([]);
 
   useEffect(() => {
