@@ -29,11 +29,14 @@ const PostDedailed: FC = () => {
 
   return (
     <div className={`${styles.wrapper}`}>
-      <div>
-        <div>{currentUser.name}</div>
-        <div>{currentUser.email}</div>
-        <div>{currentPost.title}</div>
+      <div className={`${styles.postBlockWrapper}`}>
+        <div className={`${styles.name}`}>{currentUser.name}</div>
+        <div className={`${styles.email}`}>{currentUser.email}</div>
+        <div className={`${styles.title}`}>{currentPost.title}</div>
         <div>{currentPost.body}</div>
+      </div>
+      <div className={`${styles.commentsBlockWrapper}`}>
+        <span className={`${styles.commentsHeader}`}>Comments:</span>
         {comments.map((comment: TComment) => <CommentCard key={comment.id} comment={comment} />)}
       </div>
     </div>

@@ -1,5 +1,6 @@
 .wrapper {
-  display: flex;
+  /* display: flex;
   flex-flow: row wrap;
-  gap: 30px;
+  gap: 30px; */
+  max-width: 40%;
 }

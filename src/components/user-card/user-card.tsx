@@ -17,7 +17,7 @@ const UserCard: FC<TUserCardProps> = ({ user }) => (
     <div className={`${styles.city}`}>
       {`${user.address.city}`}
     </div>
-    <Link to={`/${user.id}`}><Button value="Смотерть профиль" /></Link>
+    <Link className={`${styles.link}`} to={`/${user.id}`}><Button value="Смотерть профиль" /></Link>
   </div>
 );
 

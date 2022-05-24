@@ -17,7 +17,7 @@ const PostCard: FC<TPostCardProps> = ({ post }) => {
     <Link className={`${styles.link}`} to={linkUrl}>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.title}`}>{post.title}</div>
-        <div className={`${styles.body}`}>{post.body}</div>
+        <div className={`${styles.body}`}><span>{post.body}</span></div>
       </div>
     </Link>
   );

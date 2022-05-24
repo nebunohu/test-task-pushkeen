@@ -11,8 +11,8 @@ type TCommentCardProps = {
 const CommentCard: FC<TCommentCardProps> = ({ comment }) => {
   return (
     <div className={`${styles.wrapper}`}>
-      <div className="email">{comment.email}</div>
-      <div>{comment.name}</div>
+      <div className={`${styles.email}`}>{comment.email}</div>
+      <div className={`${styles.name}`}>{comment.name}</div>
       <div>{comment.body}</div>
     </div>
   );

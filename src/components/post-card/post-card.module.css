@@ -1,12 +1,13 @@
 .wrapper {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
+  flex-flow: column wrap;
+  justify-content: flex-start; 
   align-items: flex-start;
-
+  
   box-sizing: border-box;
-  width: 100%;
+  max-width: 100%;
   padding: 15px 35px;
+  margin-bottom: 15px;
 
   background: #FFF;
   border: 1px solid #000000;
@@ -26,7 +27,8 @@
 }
 
 .body {
-  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
   font-family: 'Open Sans';
   font-style: normal;
@@ -35,13 +37,18 @@
   line-height: 17px;
 
   color: rgba(0, 0, 0, 0.41);
+
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.body span {
+  max-width: 100%;
+  
 }
 
 .link {
   text-decoration: none;
-  /*width: 40%;*/
   flex-grow: 1;
 }

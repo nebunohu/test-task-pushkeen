@@ -1,6 +1,19 @@
-.postsWrapper {
+.wrapper {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  gap: 30px
+  flex-flow: column nowrap;
+}
+
+.postsWrapper {
+  /* display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between; 
+  gap: 30px; */
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.link {
+  text-decoration: none;
+  align-self: self-end;
 }
