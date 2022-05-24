@@ -14,7 +14,8 @@ import styles from './post-detailed.module.css';
 const PostDedailed: FC = () => {
   const [isShowForm, setIsShowForm] = useState(false);
   const dispatch = useAppDispatch();
-  const { users, posts, comments } = useAppSelector((store) => store.usersState);
+  const { users, posts } = useAppSelector((store) => store.usersState);
+  const { comments } = useAppSelector((store) => store.commentsState);
   const { pathname } = useLocation();
   const splitedPathName = pathname.split('/');
   const currentUserId = parseInt(splitedPathName[1], 10);
@@ -46,7 +47,9 @@ const PostDedailed: FC = () => {
       </div>
       <div className={`${styles.commentsBlockWrapper}`}>
         <span className={`${styles.commentsHeader}`}>Comments:</span>
-        {comments.map((comment: TComment) => <CommentCard key={comment.id} comment={comment} />)}
+        {comments.map((comment: TComment) => {
+          return <CommentCard key={comment.id + Math.random()} comment={comment} />;
+        })}
       </div>
       <Button value={isShowForm ? 'Cancel' : 'Add Comment'} onClick={onAddCommentHandler} />
       {isShowForm && <AddComment />}

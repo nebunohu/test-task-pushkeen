@@ -40,7 +40,7 @@
       }
     ],
     "@typescript-eslint/default-param-last": 0,
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["warn", "windows"],
     "arrow-body-style": 0,
     "import/no-cycle": "warn",
     "react/require-default-props": "warn",

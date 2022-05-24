@@ -1,8 +1,9 @@
 import { ThunkAction, Action } from '@reduxjs/toolkit';
 import store from '../sevices/store';
 import { TUsersActions } from '../redux/actions/users-actions';
+import { TCommentsActions } from '../redux/actions/comments-actions';
 
-export type TApplicationActions = TUsersActions;
+export type TApplicationActions = TUsersActions | TCommentsActions;
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

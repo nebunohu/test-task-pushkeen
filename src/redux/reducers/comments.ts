@@ -1,11 +1,14 @@
 import { TComment } from '../../types';
-import { TCommentsActions } from '../actions/comments-actions';
 import {
   GET_COMMENTS_REQUEST,
   GET_COMMENTS_REQUEST_SUCCESS,
   GET_COMMENTS_REQUEST_FAILED,
   CLEAR_COMMENTS,
-} from '../actions/users-actions';
+  POST_COMMENT_REQUEST,
+  POST_COMMENT_REQUEST_SUCCESS,
+  POST_COMMENT_REQUEST_FAILED,
+  TCommentsActions,
+} from '../actions/comments-actions';
 
 type TCommentssState = {
   comments: Array<TComment>;
@@ -13,6 +16,10 @@ type TCommentssState = {
   getCommentsRequest: boolean;
   getCommentsRequestSuccess: boolean;
   getCommentsRequestFailed: boolean;
+
+  postCommentRequest: boolean;
+  postCommentRequestSuccess: boolean;
+  postCommentRequestFailed: boolean;
 };
 
 const initialState: TCommentssState = {
@@ -21,6 +28,10 @@ const initialState: TCommentssState = {
   getCommentsRequest: false,
   getCommentsRequestSuccess: false,
   getCommentsRequestFailed: false,
+
+  postCommentRequest: false,
+  postCommentRequestSuccess: false,
+  postCommentRequestFailed: false,
 };
 
 const commentsReducer = (state = initialState, action: TCommentsActions) => {
@@ -37,7 +48,7 @@ const commentsReducer = (state = initialState, action: TCommentsActions) => {
       return {
         ...state,
         getCommentsRequest: false,
-        ggetCommentsRequestSuccess: true,
+        getCommentsRequestSuccess: true,
         comments: action.comments,
       };
     }
@@ -48,11 +59,33 @@ const commentsReducer = (state = initialState, action: TCommentsActions) => {
         getCommentsRequestFailed: true,
       };
     }
-
     case CLEAR_COMMENTS: {
       return {
         ...state,
         comments: [],
+      };
+    }
+    case POST_COMMENT_REQUEST: {
+      return {
+        ...state,
+        postCommentRequest: true,
+        postCommentRequestSuccess: false,
+        postCommentRequestFailed: false,
+      };
+    }
+    case POST_COMMENT_REQUEST_SUCCESS: {
+      return {
+        ...state,
+        comments: [...state.comments, action.comment],
+        postCommentRequest: false,
+        postCommentRequestSuccess: true,
+      };
+    }
+    case POST_COMMENT_REQUEST_FAILED: {
+      return {
+        ...state,
+        postCommentRequest: false,
+        postCommentRequestFailed: true,
       };
     }
     default: {
