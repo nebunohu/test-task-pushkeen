@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin: 30px 0;
-  max-width: 400px;
+  width: 400px;  
 }
 
 .formElement {
@@ -20,5 +20,8 @@
 }
 
 .teaxtAreaElement {
-  max-width: 400px;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 50px;
+  max-height: 300px;
 }
