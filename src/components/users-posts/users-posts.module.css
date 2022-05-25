@@ -1,6 +1,8 @@
 .wrapper {
-  /* display: flex;
-  flex-flow: row wrap;
-  gap: 30px; */
-  max-width: 40%;
+  display: block;
+  float: left;
+}
+
+.postsWrapper > div:nth-child(2n-1) {
+  margin-right: 2%;
 }

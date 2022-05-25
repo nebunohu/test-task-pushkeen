@@ -11,6 +11,11 @@
   width: 100%;
   min-width: 0;
   overflow-x: hidden;
+  margin: 0;
+}
+
+.postsWrapper > div:nth-child(2n-1) {
+  margin-right: 2%;
 }
 
 .link {

@@ -7,12 +7,21 @@
   box-sizing: border-box;
   max-width: 100%;
   padding: 15px 35px;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
 
   background: #FFF;
   border: 1px solid #000000;
 
   text-align: left;
+  /* float: left; */
+}
+
+/* div a .wrapper:nth-child(odd) {
+  background-color: aqua;
+} */
+.wrapper1 {
+  width: 49%;
+  float: left;
 }
 
 .title {
@@ -49,6 +58,6 @@
 }
 
 .link {
+  box-sizing: border-box;
   text-decoration: none;
-  flex-grow: 1;
 }

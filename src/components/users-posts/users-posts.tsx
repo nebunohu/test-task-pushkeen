@@ -27,7 +27,9 @@ const UsersPosts: FC<TUserPostsProps> = () => {
   return (
     <div className={`${styles.wrapper}`}>
       <Breadcrumbs />
-      {usersPosts.map((el: TPost) => <PostCard key={el.id} post={el} />)}
+      <div className={`${styles.postsWrapper}`}>
+        {usersPosts.map((el: TPost) => <PostCard key={el.id} post={el} />)}
+      </div>
     </div>
   );
 };
