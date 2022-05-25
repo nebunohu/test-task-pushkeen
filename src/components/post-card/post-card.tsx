@@ -14,7 +14,7 @@ const PostCard: FC<TPostCardProps> = ({ post }) => {
   const splitedPathname = pathname.split('/');
   const linkUrl = splitedPathname[splitedPathname.length - 1] === 'posts' ? post.id.toString() : `posts/${post.id.toString()}`;
   return (
-    <div className={`${styles.wrapper1}`}>
+    <div className={`${styles.wrapperOuter}`}>
       <Link className={`${styles.link}`} to={linkUrl}>
         <div className={`${styles.wrapper}`}>
           <div className={`${styles.title}`}>{post.title}</div>

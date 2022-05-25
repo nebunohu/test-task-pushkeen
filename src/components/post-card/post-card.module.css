@@ -19,12 +19,14 @@
 /* div a .wrapper:nth-child(odd) {
   background-color: aqua;
 } */
-.wrapper1 {
+.wrapperOuter {
   width: 49%;
   float: left;
 }
 
 .title {
+  max-width: 100%;
+
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
@@ -33,11 +35,14 @@
   text-transform: capitalize;
 
   color: #000000;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
 }
 
 .body {
   max-width: 100%;
-  box-sizing: border-box;
 
   font-family: 'Open Sans';
   font-style: normal;
