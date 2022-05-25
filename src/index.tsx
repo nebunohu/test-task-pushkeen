@@ -9,11 +9,12 @@ import './index.css';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
+const baseName = process.env.NODE_ENV !== 'development' ? '/test-task-pushkeen' : '/';
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router basename={baseName}>
         <App />
       </Router>
     </Provider>
