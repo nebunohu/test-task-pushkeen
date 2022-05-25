@@ -120,7 +120,6 @@ export const postCommentThunk = (
       `${API_BASE_URL}/posts/${post}/comments`,
       comment,
     );
-    console.log(response);
     dispatch(postCommentRequestSuccess(response));
   } catch (e) {
     dispatch(postCommentRequestFailed());
