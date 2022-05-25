@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "./static/css/main.9bd547c5.css",
+    "main.js": "./static/js/main.a6c41432.js",
+    "static/js/787.b7f13341.chunk.js": "./static/js/787.b7f13341.chunk.js",
+    "static/media/AlegreyaSansSC-Regular.ttf": "./static/media/AlegreyaSansSC-Regular.d215c944a70a1f2ba744.ttf",
+    "static/media/OpenSans-Regular.ttf": "./static/media/OpenSans-Regular.57cd57a648021fa1c396.ttf",
+    "index.html": "./index.html",
+    "static/media/close.svg": "./static/media/close.d5e5ff10c4ea1565a78cfe00262a054c.svg",
+    "main.9bd547c5.css.map": "./static/css/main.9bd547c5.css.map",
+    "main.a6c41432.js.map": "./static/js/main.a6c41432.js.map",
+    "787.b7f13341.chunk.js.map": "./static/js/787.b7f13341.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bd547c5.css",
+    "static/js/main.a6c41432.js"
+  ]
+}
