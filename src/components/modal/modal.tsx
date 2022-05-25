@@ -6,7 +6,9 @@ import modalStyles from './modal.module.css';
 
 // Components
 import ModalOverlay from '../modal-overlay/modal-overlay';
-// import ModalHeader from "../modal-header/modal-header";
+
+// Media
+import closeIconSrc from '../../images/close.svg';
 
 type TModalProps = {
   closeModal: () => void;
@@ -41,8 +43,8 @@ const Modal: FC<TModalProps> = ({ closeModal, title, children }) => {
         tabIndex={-1}
         role="button"
       >
-        <div className={`${modalStyles.closeButtonWrapper} mt-15 mr-10`}>
-          <div role="button" tabIndex={-1} onClick={closeButtonClickHandler}>X</div>
+        <div className={`${modalStyles.closeButtonWrapper}`} role="button" tabIndex={-1} onClick={closeButtonClickHandler}>
+          <img src={closeIconSrc} alt="" />
         </div>
         {
           !!title && (
