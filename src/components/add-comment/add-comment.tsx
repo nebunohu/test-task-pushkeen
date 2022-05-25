@@ -45,7 +45,7 @@ const AddComment: FC = () => {
       </label>
       <label className={`${styles.formElement} ${styles.commentInput}`} htmlFor="body">
         Comment:
-        <textarea name="body" value={formState.body} onChange={onChangeHandler} />
+        <textarea className={`${styles.teaxtAreaElement}`} name="body" value={formState.body} onChange={onChangeHandler} />
       </label>
       <div className={`${styles.buttonWrapper}`}>
         <Button type="submit" value="Submit" />
