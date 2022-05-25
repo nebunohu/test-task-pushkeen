@@ -22,7 +22,7 @@ const UsersPosts: FC<TUserPostsProps> = () => {
 
   useEffect(() => {
     setUsersPosts(posts.filter((el: TPost) => el.userId === parseInt(userId!, 10)));
-  }, []);
+  }, [posts]);
 
   return (
     <div className={`${styles.wrapper}`}>

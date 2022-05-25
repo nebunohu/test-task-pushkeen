@@ -19,15 +19,15 @@ const PostDedailed: FC = () => {
   const splitedPathName = pathname.split('/');
   const currentUserId = parseInt(splitedPathName[1], 10);
   const currentPostId = parseInt(splitedPathName[3], 10);
-  const currentUser = users.find((el: TUser) => el.id === currentUserId);
-  const currentPost = posts.find((el: TPost) => el.id === currentPostId);
+  const currentUser = users.length ? users.find((el: TUser) => el.id === currentUserId) : undefined;
+  const currentPost = posts.length ? posts.find((el: TPost) => el.id === currentPostId) : undefined;
 
   useEffect(() => {
-    dispatch(getCommentsThunk(currentPost!.id.toString()));
+    if (currentPost) dispatch(getCommentsThunk(currentPost!.id.toString()));
     return () => {
       dispatch(clearComments());
     };
-  }, []);
+  }, [posts]);
 
   const onAddCommentHandler = () => {
     dispatch(openModal());
