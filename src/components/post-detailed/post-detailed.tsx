@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { openModal } from '../../redux/actions/app-actions';
 import { clearComments, getCommentsThunk } from '../../redux/actions/users-actions';
 import { useAppDispatch, useAppSelector } from '../../sevices/hooks';
 import { TComment, TPost, TUser } from '../../types';
 import Button from '../../ui/button/button';
-import AddComment from '../add-comment/AddComment';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import CommentCard from '../comment-card/comment-card';
 
@@ -12,7 +12,6 @@ import CommentCard from '../comment-card/comment-card';
 import styles from './post-detailed.module.css';
 
 const PostDedailed: FC = () => {
-  const [isShowForm, setIsShowForm] = useState(false);
   const dispatch = useAppDispatch();
   const { users, posts } = useAppSelector((store) => store.usersState);
   const { comments } = useAppSelector((store) => store.commentsState);
@@ -31,7 +30,7 @@ const PostDedailed: FC = () => {
   }, []);
 
   const onAddCommentHandler = () => {
-    setIsShowForm(!isShowForm);
+    dispatch(openModal());
   };
 
   if (!currentUser || !currentPost) return <div>404</div>;
@@ -51,8 +50,9 @@ const PostDedailed: FC = () => {
           return <CommentCard key={comment.id + Math.random()} comment={comment} />;
         })}
       </div>
-      <Button value={isShowForm ? 'Cancel' : 'Add Comment'} onClick={onAddCommentHandler} />
-      {isShowForm && <AddComment />}
+      <div className={`${styles.buttonWrapper}`}>
+        <Button value="Comment" onClick={onAddCommentHandler} />
+      </div>
     </div>
   );
 };

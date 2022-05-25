@@ -1,5 +1,5 @@
 .wrapper {
-  
+  margin-bottom: 30px;
 }
 
 .postBlockWrapper {
@@ -26,8 +26,13 @@
   display: flex;
   flex-flow: column nowrap;
   gap: 15px;
+  margin-bottom: 30px;
 }
 
 .commentsHeader {
   font-size: 1.5em;;
+}
+
+.buttonWrapper {
+  float: right;
 }

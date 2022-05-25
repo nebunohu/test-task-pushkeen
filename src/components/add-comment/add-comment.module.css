@@ -1,0 +1,20 @@
+.commentForm {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 30px 0;
+  max-width: 400px;
+}
+
+.formElement {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.commentInput {
+  margin-bottom: 15px;
+}
+
+.buttonWrapper {
+  align-self: center;
+}
